@@ -62,7 +62,9 @@ fun IntrinsicBug(model: Data, modifier: Modifier = Modifier) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+//                .weight(1f) // TODO explain example in list with weight
+                .padding(horizontal = 8.dp)
+                .padding(bottom = 8.dp)
         ) {
             Text(model.text)
             Spacer(modifier = Modifier.weight(1f))
