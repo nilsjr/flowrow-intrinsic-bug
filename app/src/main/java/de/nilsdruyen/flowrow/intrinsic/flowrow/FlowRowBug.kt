@@ -36,7 +36,7 @@ fun IntrinsicBug(model: Data, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.spacedBy(4.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
-            model.items.forEach { Text(it, Modifier.background(Color.White)) }
+            model.items.forEach { Text(it, Modifier.background(Color.Yellow)) }
         }
     }
 }
