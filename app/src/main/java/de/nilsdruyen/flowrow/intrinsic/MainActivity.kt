@@ -63,7 +63,7 @@ class MainActivity : ComponentActivity() {
                         }
                         Spacer(Modifier.height(16.dp))
                         Text(
-                            "Row with IntrinsicSize.Max & items with maxHeight",
+                            "Row without IntrinsicSize.Max & items with height wrapContent",
                             style = MaterialTheme.typography.bodyMedium,
                         )
                         Spacer(Modifier.height(4.dp))
