@@ -1,4 +1,4 @@
-package de.nilsdruyen.flowrow.intrinsic
+package de.nilsdruyen.flowrow.intrinsic.flowrow
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -24,25 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import de.nilsdruyen.flowrow.intrinsic.ui.theme.FlowrowintrinsicbugTheme
-
-data class Data(val text: String, val items: List<String>)
-
-private val testData = Data(
-    text = "Hello World",
-    items = listOf(
-        "Bla bla bla bla bla bla Lorem ipsum dolo ipsum",
-        "Hello",
-        "Lorem ipsum dolo",
-        "Hello",
-        "Hello",
-        "Lorem ipsum dolo",
-    ),
-)
+import de.nilsdruyen.flowrow.intrinsic.Data
+import de.nilsdruyen.flowrow.intrinsic.testData
+import de.nilsdruyen.flowrow.intrinsic.ui.theme.FlowRowIntrinsicBugTheme
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun IntrinsicBug(model: Data, modifier: Modifier = Modifier) {
+fun IntrinsicComplexBug(model: Data, modifier: Modifier = Modifier) {
     Card(modifier) {
         Row(
             modifier = Modifier
@@ -81,8 +69,8 @@ fun IntrinsicBug(model: Data, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun WithIntrinsicMaxPreview() {
-    FlowrowintrinsicbugTheme {
-        IntrinsicBug(
+    FlowRowIntrinsicBugTheme {
+        IntrinsicComplexBug(
             model = testData,
             modifier = Modifier.height(IntrinsicSize.Max),
         )
@@ -92,32 +80,34 @@ private fun WithIntrinsicMaxPreview() {
 @Preview
 @Composable
 private fun WithoutIntrinsicMaxPreview() {
-    FlowrowintrinsicbugTheme {
-        IntrinsicBug(
+    FlowRowIntrinsicBugTheme {
+        IntrinsicComplexBug(
             model = testData,
             modifier = Modifier,
         )
     }
 }
 
-@Preview
+@Preview(group = "complex")
 @Composable
 private fun IntrinsicBugListPreview() {
-    FlowrowintrinsicbugTheme {
+    FlowRowIntrinsicBugTheme {
         Row(
             Modifier
                 .horizontalScroll(rememberScrollState())
                 .height(IntrinsicSize.Max)
         ) {
-            IntrinsicBug(
+            IntrinsicComplexBug(
                 model = testData,
                 modifier = Modifier
+                    .fillMaxHeight()
                     .width(250.dp)
             )
             Spacer(modifier = Modifier.width(8.dp))
-            IntrinsicBug(
+            IntrinsicComplexBug(
                 model = testData,
                 modifier = Modifier
+                    .fillMaxHeight()
                     .width(350.dp)
             )
         }
