@@ -4,7 +4,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id("com.android.application") version "9.5.0" apply false
     id("org.jetbrains.kotlin.plugin.compose") version "2.4.21" apply false
-    id("io.github.ben-manes.versions") version "0.61.0"
+    id("io.github.ben-manes.versions") version "0.67.0"
 }
 
 // https://github.com/ben-manes/gradle-versions-plugin
