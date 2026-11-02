@@ -23,7 +23,7 @@ correctly and resizes the parent layout so every information its visible
 
 ## Issue link
 
-Needs to be created in issue tracker
+https://issuetracker.google.com/issues/580651951
 
 Related issues:
 https://github.com/google/accompanist/issues/622
